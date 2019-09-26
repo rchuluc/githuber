@@ -13,6 +13,7 @@ import styles from './styles'
 import {colors} from '@styles'
 import Api from '@services/api'
 import AsyncStorage from '@react-native-community/async-storage'
+import propTypes from 'prop-types'
 
 const welcome = ({navigation}) => {
   const [username, setUsername] = useState('')
@@ -34,7 +35,7 @@ const welcome = ({navigation}) => {
       await saveUser(username)
       navigation.navigate('Repositories')
     } catch (err) {
-      Alert.alert('Ops', 'usuário não encontrado')
+      Alert.alert('Ops', 'Usuário não encontrado')
       setLoading(false)
     }
   }
@@ -66,6 +67,12 @@ const welcome = ({navigation}) => {
       </View>
     </View>
   )
+}
+
+welcome.propTypes = {
+  navigation: propTypes.shape({
+    navigation: propTypes.func,
+  }).isRequired,
 }
 
 export default welcome
