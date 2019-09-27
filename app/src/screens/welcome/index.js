@@ -33,7 +33,7 @@ const welcome = ({navigation}) => {
     try {
       await checkUserExists(username)
       await saveUser(username)
-      navigation.navigate('Repositories')
+      navigation.navigate('App')
     } catch (err) {
       Alert.alert('Ops', 'Usuário não encontrado')
       setLoading(false)
