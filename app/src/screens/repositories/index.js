@@ -1,6 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import propTypes from 'prop-types'
-import {View, ActivityIndicator, FlatList} from 'react-native'
+import {
+  View,
+  ActivityIndicator,
+  FlatList,
+  StatusBar,
+  Platform,
+} from 'react-native'
+import {colors} from '@styles'
 import Header from '@components/header'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Api from '@services/api'
@@ -28,6 +35,11 @@ const repositories = () => {
 
   return (
     <View style={styles.container}>
+      {Platform.OS === 'android' ? (
+        <StatusBar backgroundColor={colors.white} />
+      ) : (
+        <StatusBar barStyle="light-content" />
+      )}
       <Header title="Repositórios" />
       {loading ? (
         <ActivityIndicator style={styles.loading} />

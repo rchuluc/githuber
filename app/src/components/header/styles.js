@@ -1,11 +1,11 @@
-import {StyleSheet, StatusBar} from 'react-native'
+import {StyleSheet, Platform} from 'react-native'
 import {getStatusBarHeight} from 'react-native-status-bar-height'
 import {metrics, colors} from '@styles'
 
 const styles = StyleSheet.create({
   container: {
     height: 54 + getStatusBarHeight(),
-    paddingTop: getStatusBarHeight(),
+    paddingTop: Platform.OS === 'ios' ? getStatusBarHeight() : 0,
     borderBottomWidth: 1,
     borderBottomColor: colors.light,
     flexDirection: 'row',
