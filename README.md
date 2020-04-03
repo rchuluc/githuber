@@ -3,7 +3,7 @@
   <h1>Githuber</h1>
 </div>
 
-<div>
+<div align="center">
 <h4>Simple github client made with React Native</h4>  
   
 ![me](https://img.shields.io/github/followers/rchuluc?label=Follow%20me&style=social)
